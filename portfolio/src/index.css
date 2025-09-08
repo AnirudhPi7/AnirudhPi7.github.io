@@ -1,0 +1,14 @@
+/* Tailwind v4 CSS-first setup */
+@import "tailwindcss";
+
+/* Tell Tailwind where to look for class names */
+@source "./index.html" "./src/**/*.{js,ts,jsx,tsx}";
+
+html { scroll-behavior: smooth; }
+
+/* Respect "Reduce Motion": disable reveal transitions if user prefers */
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:transition-all { transition: none !important; }
+  .motion-safe\:duration-700 { transition-duration: 0s !important; }
+  .motion-safe\:ease-out { transition-timing-function: initial !important; }
+}
